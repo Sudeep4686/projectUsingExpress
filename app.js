@@ -28,4 +28,10 @@ app.post('/contact', (req, res, next) => {
     const email = req.body.email;
     res.redirect('/');
   });
+
+app.get('/success', (req, res, next) => {
+    const message = req.query.message;
+    res.send(`Form submitted successfully: ${message}`);
+});  
+
 app.listen(20000);
